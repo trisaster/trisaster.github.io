@@ -257,6 +257,8 @@ Error message and password prompt
 
 <li>$:/plugins/sq/streams/action-macros</li>
 
+<li>$:/plugins/sq/streams/contextmenu/contextmenu-template</li>
+
 <li>$:/plugins/tiddlywiki/highlight</li>
 
 <li>$:/rr/query-both</li>
@@ -10633,9 +10635,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/rr/query-both]]
-# [[$:/rr/query-not]]
-# [[$:/rr/query-or]]</pre>
+# [[$:/plugins/sq/streams/contextmenu/contextmenu-template]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -13022,6 +13022,36 @@ focus: show</pre>
 &lt;/$set&gt;
 \end</pre>
 </div>
+<div bag="default" created="20200602163018613" modified="20201026193852241" revision="0" tags="rr-UX-mod" title="$:/plugins/sq/streams/contextmenu/contextmenu-template" type="text/vnd.tiddlywiki">
+<pre>\define menu-item(title,subtitle:&quot;&quot;,actions:&quot;&quot;)
+		&lt;$button class=&quot;tc-menu-list-item tc-btn-invisible&quot; actions=&lt;&lt;__actions__&gt;&gt; &gt;
+			&lt;span class=&quot;sq-contextmenu-itemwrapper&quot;&gt;
+				&lt;span class=&quot;sq-contextmenu-itemtext&quot;&gt;$title$&lt;/span&gt;
+				&lt;span class=&quot;sq-contextmenu-itemicon&quot;&gt;&lt;$macrocall $name=&quot;displayshortcuts&quot; $output=&quot;text/plain&quot; shortcuts=&quot;$subtitle$&quot; prefix=&quot;&quot; separator=&quot; &quot; suffix=&quot;&quot;/&gt;&lt;/span&gt;
+			&lt;/span&gt;
+		&lt;/$button&gt;
+\end
+
+\define menu-divider() &lt;div class=&quot;sq-contextmenu-divider&quot;/&gt;
+
+&lt;$reveal type=&quot;popup&quot; state=&lt;&lt;contextmenu-state&gt;&gt;  position=&quot;left&quot; tag=&quot;div&quot;&gt;
+	&lt;div class=&quot;tc-drop-down sq-contextmenu&quot;&gt;
+		&lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Open&quot; actions=&quot;&quot;&quot;&lt;$action-navigate/&gt;&quot;&quot;&quot;/&gt;
+		&lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Rename&quot; subtitle=&quot;((streams-rename))&quot; actions=&lt;&lt;rename-node-actions&gt;&gt;/&gt;
+		&lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Delete&quot; subtitle=&quot;((streams-delete))&quot; actions=&lt;&lt;delete-node-actions&gt;&gt;/&gt;
+                &lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Indent&quot; subtitle=&quot;((streams-indent))&quot; actions=&lt;&lt;indent-node-actions&gt;&gt;/&gt;
+                &lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Unindent&quot; subtitle=&quot;((streams-unindent))&quot; actions=&lt;&lt;unindent-node-actions&gt;&gt;/&gt;
+		&lt;$list filter=&quot;[tag[$:/tags/streams/contextmenu]]&quot; variable=&quot;listItem&quot;&gt;
+			&lt;$macrocall $name=&quot;menu-item&quot; 
+				title={{{[&lt;listItem&gt;get[sq-contextmenu-name]]}}} 
+				subtitle={{{[&lt;listItem&gt;get[key]] [&lt;listItem&gt;get[sq-contextmenu-subtitle]] +[first[]]}}} 
+				actions={{{[&lt;listItem&gt;get[text]]}}} /&gt;
+		&lt;/$list&gt;
+		&lt;&lt;menu-divider&gt;&gt;
+		&lt;$macrocall $name=&quot;menu-item&quot; title=&quot;Keyboard Shortcuts (?)&quot; actions=&quot;&quot;&quot;&lt;$action-navigate $to=&quot;$:/plugins/sq/streams/info/keyboard-shortcuts&quot;/&gt;&quot;&quot;&quot;/&gt;
+	&lt;/div&gt;
+&lt;/$reveal&gt;</pre>
+</div>
 <div author="Joao Bolila" bag="default" dependents="" description="Highlight.js syntax highlighting" list="readme usage howto license" name="Highlight" plugin-type="plugin" revision="0" title="$:/plugins/tiddlywiki/highlight" type="application/json" version="5.1.22">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -13259,8 +13289,8 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" created="20201023192246712" modified="20201026155357764" revision="1" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Info</pre>
 </div>
-<div created="20201026155423197" modified="20201026155424304" title="$:/state/toc/SHORTCUTS-Journal--671814999">
-<pre>close</pre>
+<div created="20201026155423197" modified="20201026160931409" title="$:/state/toc/SHORTCUTS-Journal--671814999">
+<pre>open</pre>
 </div>
 <div bag="default" revision="1" title="$:/status/IsAnonymous">
 <pre>yes</pre>
@@ -13277,7 +13307,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201026155958111" list="[[Download This Wiki as index.html]] Welcome" modified="20201026160644321" title="$:/StoryList">
+<div created="20201026160936873" list="[[Download This Wiki as index.html]] Welcome" modified="20201026194006795" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -13293,19 +13323,19 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
         },
         &quot;$:/info/url/full&quot;: {
             &quot;title&quot;: &quot;$:/info/url/full&quot;,
-            &quot;text&quot;: &quot;file:///Users/nath/Sync/Sites/Notes/For%20GitHub/trisaster/2020:10:26/index.html&quot;
+            &quot;text&quot;: &quot;https://trisaster.github.io/&quot;
         },
         &quot;$:/info/url/host&quot;: {
             &quot;title&quot;: &quot;$:/info/url/host&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;trisaster.github.io&quot;
         },
         &quot;$:/info/url/hostname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/hostname&quot;,
-            &quot;text&quot;: &quot;&quot;
+            &quot;text&quot;: &quot;trisaster.github.io&quot;
         },
         &quot;$:/info/url/protocol&quot;: {
             &quot;title&quot;: &quot;$:/info/url/protocol&quot;,
-            &quot;text&quot;: &quot;file:&quot;
+            &quot;text&quot;: &quot;https:&quot;
         },
         &quot;$:/info/url/port&quot;: {
             &quot;title&quot;: &quot;$:/info/url/port&quot;,
@@ -13313,7 +13343,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
         },
         &quot;$:/info/url/pathname&quot;: {
             &quot;title&quot;: &quot;$:/info/url/pathname&quot;,
-            &quot;text&quot;: &quot;/Users/nath/Sync/Sites/Notes/For%20GitHub/trisaster/2020:10:26/index.html&quot;
+            &quot;text&quot;: &quot;/&quot;
         },
         &quot;$:/info/url/search&quot;: {
             &quot;title&quot;: &quot;$:/info/url/search&quot;,
@@ -13321,7 +13351,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
         },
         &quot;$:/info/url/origin&quot;: {
             &quot;title&quot;: &quot;$:/info/url/origin&quot;,
-            &quot;text&quot;: &quot;file://&quot;
+            &quot;text&quot;: &quot;https://trisaster.github.io&quot;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
@@ -13338,8 +13368,8 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
     }
 }</pre>
 </div>
-<div created="20201026160150984" modified="20201026160154011" title="$:/temp/search">
-<pre></pre>
+<div created="20201026160150984" modified="20201026194005459" title="$:/temp/search">
+<pre>down</pre>
 </div>
 <div bag="default" created="20201022113828835" modified="20201022113828858" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/jd/Whitespace</pre>
