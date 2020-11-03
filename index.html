@@ -303,6 +303,8 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/snippets/download-wiki-button 1</li>
+
 <li>$:/state/plugin-info--167012066-$:/themes/jd/Whitespace---1322050373</li>
 
 <li>$:/state/plugin-info--270617185-$:/themes/jd/Whitespace</li>
@@ -704,7 +706,7 @@ Error message and password prompt
 <div bag="default" created="20170616192701335" modified="20201022181915789" revision="0" title="$:/_sq/Stories/config/twostorybreakpoint" type="text/vnd.tiddlywiki">
 <pre>1100px</pre>
 </div>
-<div bag="default" created="20200425131030296" current-tiddler=":: Change UI ::" modified="20201103175335406" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" current-tiddler=":: Change UI ::" modified="20201103180548050" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1346,17 +1348,28 @@ Error message and password prompt
     {
         &quot;title&quot;: &quot;:: Change UI ::&quot;,
         &quot;fromPageRect&quot;: {
-            &quot;top&quot;: 382.1875,
+            &quot;top&quot;: 125,
+            &quot;left&quot;: 1040.4375,
+            &quot;width&quot;: 32.890625,
+            &quot;right&quot;: 1073.328125,
+            &quot;bottom&quot;: 164,
+            &quot;height&quot;: 39
+        }
+    },
+    {
+        &quot;title&quot;: &quot;:: Change UI ::&quot;,
+        &quot;fromPageRect&quot;: {
+            &quot;top&quot;: 640.1875,
             &quot;left&quot;: 31,
             &quot;width&quot;: 114.40625,
             &quot;right&quot;: 145.40625,
-            &quot;bottom&quot;: 399.1875,
+            &quot;bottom&quot;: 657.1875,
             &quot;height&quot;: 17
         }
     }
 ]</pre>
 </div>
-<div bag="default" created="20170615140314952" list="" modified="20201103092354457" revision="3" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
+<div bag="default" created="20170615140314952" list="" modified="20201103180014398" revision="3" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
 <div bag="default" created="20201022114623392" modified="20201103094035498" revision="0" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
@@ -10903,7 +10916,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20201022130252157" modified="20201103175340001" revision="0" tags="" title="$:/core/ui/EditTemplate/body" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022130252157" modified="20201103180232352" revision="0" tags="" title="$:/core/ui/EditTemplate/body" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/EditTemplate/Body/
 \define config-visibility-title()
 $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
@@ -11079,7 +11092,7 @@ $value={{{ [&lt;newFieldValueTiddler&gt;get[text]] }}}/&gt;
 &lt;/$fieldmangler&gt;
 </pre>
 </div>
-<div bag="default" created="20201022125048654" modified="20201103175337879" revision="0" tags="" title="$:/core/ui/EditTemplate/tags" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022125048654" modified="20201103180553774" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/tags" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 \define lingo-base() $:/language/EditTemplate/
@@ -14099,6 +14112,9 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" created="20201022180146229" modified="20201022180214984" revision="0" title="$:/SiteTitle" type="text/vnd.tiddlywiki">
 <pre>RR-TW5</pre>
 </div>
+<div created="20201103180600125" modified="20201103180600125" title="$:/snippets/download-wiki-button 1">
+<pre></pre>
+</div>
 <div bag="default" created="20201023192258639" modified="20201023192330999" revision="3" title="$:/state/plugin-info--167012066-$:/themes/jd/Whitespace---1322050373">
 <pre>config</pre>
 </div>
@@ -14156,7 +14172,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201103175110990" list="[[Download This Wiki as index.html]]" modified="20201103175441611" title="$:/StoryList">
+<div created="20201103175932384" list="[[Download This Wiki as index.html]]" modified="20201103180004195" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201102121848651" modified="20201103101557422" title="$:/temp/advancedsearch">
@@ -14220,7 +14236,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
     }
 }</pre>
 </div>
-<div created="20201026160150984" modified="20201103175440102" title="$:/temp/search">
+<div created="20201026160150984" modified="20201103180533821" title="$:/temp/search">
 <pre>down</pre>
 </div>
 <div bag="default" created="20201022113828835" modified="20201022113828858" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
@@ -15475,12 +15491,13 @@ Showing all &lt;$count filter=&quot;[tag[Journal]]&quot;/&gt; Entries:&lt;br&gt;
 <div bag="default" created="20201023183032859" modified="20201023183033144" revision="0" title="Block Level Linking" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div bag="default" caption="DAILY NOTES &lt;small&gt;(today = ctrl-j)&lt;/small&gt;" created="20201022120929672" modified="20201103175210131" revision="0" stream-list="" stream-type="default" tags="SHORTCUTS rr-essentials hide no-stream" title="DAILY NOTES" type="text/vnd.tiddlywiki">
+<div bag="default" caption="DAILY NOTES &lt;small&gt;(today = ctrl-j)&lt;/small&gt;" created="20201022120929672" modified="20201103180230722" revision="0" stream-list="" stream-type="default" tags="SHORTCUTS rr-essentials hide no-stream" title="DAILY NOTES" type="text/vnd.tiddlywiki">
 <pre>Showing the most recent  
 out of &lt;$count filter=&quot;[tag[Journal]]&quot;/&gt; Entries:&lt;br&gt;
 [[See all entries|ALL DAILY NOTES]]&lt;br&gt;
-&lt;hr&gt;
-&lt;$list filter=&quot;[tag[Journal]] +[!sort[created]limit[5]]&quot;&gt;&lt;br&gt;&lt;$link&gt;{{||$:/core/ui/ViewTemplate/title}}&lt;/$link&gt;
+&lt;$list filter=&quot;[tag[Journal]] +[!sort[created]limit[5]]&quot;&gt;&lt;br&gt;
+&lt;hr&gt;&lt;br&gt;
+&lt;$link&gt;{{||$:/core/ui/ViewTemplate/title}}&lt;/$link&gt;
 {{||$:/plugins/sq/streams/nodes-list-template}}
 &lt;/$list&gt;</pre>
 </div>
@@ -15491,7 +15508,7 @@ out of &lt;$count filter=&quot;[tag[Journal]]&quot;/&gt; Entries:&lt;br&gt;
 
 &lt;/$list&gt;</pre>
 </div>
-<div bag="default" created="20200723134936565" modified="20201026152556523" revision="0" tags="Tech" title="Download This Wiki as index.html" type="text/vnd.tiddlywiki">
+<div bag="default" created="20200723134936565" modified="20201103180600124" revision="0" tags="Tech FAVOURITES" title="Download This Wiki as index.html" type="text/vnd.tiddlywiki">
 <pre>{{$:/snippets/download-wiki-button}}
 
 To edit the button: [[$:/snippets/download-wiki-button]]</pre>
