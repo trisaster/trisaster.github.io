@@ -193,9 +193,19 @@ Error message and password prompt
 
 <li>$:/config/RelinkOnRename</li>
 
+<li>$:/config/shortcuts/streams-demote</li>
+
+<li>$:/config/shortcuts/streams-focus-higher</li>
+
+<li>$:/config/shortcuts/streams-focus-lower</li>
+
+<li>$:/config/shortcuts/streams-promote</li>
+
 <li>$:/config/SideBar/Visibility/$:/rr/SideBar/SHORTCUTS</li>
 
 <li>$:/config/sq/Stories/storyRiverRatio</li>
+
+<li>$:/config/sq/streams/stream-enable-filter</li>
 
 <li>$:/config/TextEditor/EnableToolbar</li>
 
@@ -694,7 +704,7 @@ Error message and password prompt
 <div bag="default" created="20170616192701335" modified="20201022181915789" revision="0" title="$:/_sq/Stories/config/twostorybreakpoint" type="text/vnd.tiddlywiki">
 <pre>1100px</pre>
 </div>
-<div bag="default" created="20200425131030296" current-tiddler=":: Change UI ::" modified="20201103101409439" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
+<div bag="default" created="20200425131030296" current-tiddler=":: Change UI ::" modified="20201103175335406" revision="0" title="$:/_sq/Stories/Story2HistoryList" type="application/json">
 <pre>[
     {
         &quot;title&quot;: &quot;$:/config/Tiddlers/TitleLinks&quot;,
@@ -1337,9 +1347,9 @@ Error message and password prompt
         &quot;title&quot;: &quot;:: Change UI ::&quot;,
         &quot;fromPageRect&quot;: {
             &quot;top&quot;: 382.1875,
-            &quot;left&quot;: 1036,
+            &quot;left&quot;: 31,
             &quot;width&quot;: 114.40625,
-            &quot;right&quot;: 1150.40625,
+            &quot;right&quot;: 145.40625,
             &quot;bottom&quot;: 399.1875,
             &quot;height&quot;: 17
         }
@@ -1452,11 +1462,26 @@ Error message and password prompt
 <div bag="default" created="20201023181813089" modified="20201023181813099" revision="0" title="$:/config/RelinkOnRename" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
+<div created="20200914163104446" modified="20201103171857600" title="$:/config/shortcuts/streams-demote" type="text/vnd.tiddlywiki">
+<pre>ctrl-alt-Down</pre>
+</div>
+<div created="20200914163342651" modified="20201103171746279" title="$:/config/shortcuts/streams-focus-higher" type="text/vnd.tiddlywiki">
+<pre>alt-Up</pre>
+</div>
+<div created="20200914163347755" modified="20201103171842379" title="$:/config/shortcuts/streams-focus-lower" type="text/vnd.tiddlywiki">
+<pre>alt-Down</pre>
+</div>
+<div created="20200914163110776" modified="20201103171836423" title="$:/config/shortcuts/streams-promote" type="text/vnd.tiddlywiki">
+<pre>ctrl-alt-Up</pre>
+</div>
 <div created="20201103094143604" modified="20201103094144759" title="$:/config/SideBar/Visibility/$:/rr/SideBar/SHORTCUTS">
 <pre>show</pre>
 </div>
 <div bag="default" created="20200730040856198" modified="20201022181907552" revision="0" tags="" title="$:/config/sq/Stories/storyRiverRatio" type="text/vnd.tiddlywiki">
 <pre>50</pre>
+</div>
+<div created="20200528183035516" description="Filter that determines which tiddlers get the add node button at the bottom" modified="20201103173324132" tags="rr-UI-mod" title="$:/config/sq/streams/stream-enable-filter" type="text/vnd.tiddlywiki">
+<pre>[!is[shadow]!tag[no-stream]]</pre>
 </div>
 <div bag="default" created="20201022130701087" modified="20201022131041149" revision="0" title="$:/config/TextEditor/EnableToolbar" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
@@ -10878,7 +10903,7 @@ Error message and password prompt
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20201022130252157" modified="20201102121901859" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/body" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022130252157" modified="20201103175340001" revision="0" tags="" title="$:/core/ui/EditTemplate/body" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/EditTemplate/Body/
 \define config-visibility-title()
 $:/config/EditorToolbarButtons/Visibility/$(currentTiddler)$
@@ -10939,7 +10964,7 @@ $:/config/EditToolbarButtons/Visibility/$(listItem)$
 &lt;/div&gt;
 </pre>
 </div>
-<div bag="default" created="20201022130300119" modified="20201102122117975" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/fields" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022130300119" modified="20201103175341435" revision="0" tags="" title="$:/core/ui/EditTemplate/fields" type="text/vnd.tiddlywiki">
 <pre>\define lingo-base() $:/language/EditTemplate/
 \define config-title()
 $:/config/EditTemplateFields/Visibility/$(currentField)$
@@ -11054,7 +11079,7 @@ $value={{{ [&lt;newFieldValueTiddler&gt;get[text]] }}}/&gt;
 &lt;/$fieldmangler&gt;
 </pre>
 </div>
-<div bag="default" created="20201022125048654" modified="20201103074055584" revision="0" tags="$:/tags/EditTemplate" title="$:/core/ui/EditTemplate/tags" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022125048654" modified="20201103175337879" revision="0" tags="" title="$:/core/ui/EditTemplate/tags" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 
 \define lingo-base() $:/language/EditTemplate/
@@ -11292,7 +11317,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 &lt;/$reveal&gt;
 </pre>
 </div>
-<div bag="default" created="20201022123321429" modified="20201103101412689" revision="0" tags="$:/tags/ViewTemplate" title="$:/core/ui/ViewTemplate/tags" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201022123321429" modified="20201103175349693" revision="0" tags="" title="$:/core/ui/ViewTemplate/tags" type="text/vnd.tiddlywiki">
 <pre>&lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
 &lt;div class=&quot;tc-tags-wrapper&quot;&gt;&lt;$list filter=&quot;[all[current]tags[]sort[title]]&quot; template=&quot;$:/core/ui/TagTemplate&quot; storyview=&quot;pop&quot;/&gt;&lt;/div&gt;
 &lt;/$reveal&gt;
@@ -11347,8 +11372,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/rr/ViewTemplate/LinkedReferences]]
-# [[$:/plugins/sq/streams/breadcrumb-parents-view-template]]</pre>
+# [[$:/config/sq/streams/stream-enable-filter]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -14132,7 +14156,7 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201103101355616" list="[[Download This Wiki as index.html]]" modified="20201103102734728" title="$:/StoryList">
+<div created="20201103175110990" list="[[Download This Wiki as index.html]]" modified="20201103175441611" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20201102121848651" modified="20201103101557422" title="$:/temp/advancedsearch">
@@ -14183,11 +14207,11 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1366&quot;
+            &quot;text&quot;: &quot;1440&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;900&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -14196,8 +14220,8 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
     }
 }</pre>
 </div>
-<div created="20201026160150984" modified="20201103102739181" title="$:/temp/search">
-<pre></pre>
+<div created="20201026160150984" modified="20201103175440102" title="$:/temp/search">
+<pre>down</pre>
 </div>
 <div bag="default" created="20201022113828835" modified="20201022113828858" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/jd/Whitespace</pre>
@@ -15451,13 +15475,13 @@ Showing all &lt;$count filter=&quot;[tag[Journal]]&quot;/&gt; Entries:&lt;br&gt;
 <div bag="default" created="20201023183032859" modified="20201023183033144" revision="0" title="Block Level Linking" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div bag="default" caption="DAILY NOTES &lt;small&gt;(today = ctrl-j)&lt;/small&gt;" created="20201022120929672" modified="20201103094127267" revision="0" stream-list="" stream-type="default" tags="SHORTCUTS rr-essentials hide" title="DAILY NOTES" type="text/vnd.tiddlywiki">
+<div bag="default" caption="DAILY NOTES &lt;small&gt;(today = ctrl-j)&lt;/small&gt;" created="20201022120929672" modified="20201103175210131" revision="0" stream-list="" stream-type="default" tags="SHORTCUTS rr-essentials hide no-stream" title="DAILY NOTES" type="text/vnd.tiddlywiki">
 <pre>Showing the most recent  
 out of &lt;$count filter=&quot;[tag[Journal]]&quot;/&gt; Entries:&lt;br&gt;
 [[See all entries|ALL DAILY NOTES]]&lt;br&gt;
+&lt;hr&gt;
 &lt;$list filter=&quot;[tag[Journal]] +[!sort[created]limit[5]]&quot;&gt;&lt;br&gt;&lt;$link&gt;{{||$:/core/ui/ViewTemplate/title}}&lt;/$link&gt;
 {{||$:/plugins/sq/streams/nodes-list-template}}
-&lt;hr&gt;
 &lt;/$list&gt;</pre>
 </div>
 <div created="20201022120944935" modified="20201031065207180" revision="0" tags="hide rr-essentials rr-todo" title="DONE" type="text/vnd.tiddlywiki">
