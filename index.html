@@ -293,6 +293,8 @@ Error message and password prompt
 
 <li>$:/rr/ViewTemplate/LinkedReferences</li>
 
+<li>$:/rr/ViewTemplate/UnlinkedReferences</li>
+
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -316,6 +318,8 @@ Error message and password prompt
 <li>$:/state/sq/streams/visibility/2020/10/22/20201022175317738-2124066243</li>
 
 <li>$:/state/sq/streams/visibility/2020/10/26/20201026122846202--1430236258</li>
+
+<li>$:/state/tab--1498284803</li>
 
 <li>$:/state/tab--1963855381</li>
 
@@ -561,6 +565,8 @@ Error message and password prompt
 
 <li>November 3rd, 2020</li>
 
+<li>November 3rd, 2020/20201107154213699</li>
+
 <li>November 4th, 2020 (Wednesday)</li>
 
 <li>October 23rd, 2020</li>
@@ -679,10 +685,6 @@ Error message and password prompt
 
 <li>Welcome/20201023183320280</li>
 
-<li>Welcome/20201023183505570</li>
-
-<li>Welcome/20201023183626785</li>
-
 <li>Welcome/20201023183829067</li>
 
 <li>Welcome/20201023183844458</li>
@@ -753,7 +755,7 @@ Error message and password prompt
 <div bag="default" created="20170615140314952" list="" modified="20201105095606258" revision="3" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div bag="default" created="20201022114623392" modified="20201105095603363" revision="0" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
+<div bag="default" created="20201022114623392" modified="20201107154450746" revision="0" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
 <pre>{
     &quot;New Tiddler 1&quot;: &quot;hide&quot;,
     &quot;2020/10/22/20201022175317738&quot;: &quot;show&quot;,
@@ -766,7 +768,9 @@ Error message and password prompt
     &quot;November 3rd, 2020&quot;: &quot;hide&quot;,
     &quot;October 23rd, 2020&quot;: &quot;hide&quot;,
     &quot;Queries/20201026124227549&quot;: &quot;show&quot;,
-    &quot;Welcome/20201023185132318&quot;: &quot;show&quot;
+    &quot;Welcome/20201023185132318&quot;: &quot;show&quot;,
+    &quot;2020/10/22/20201022175414939&quot;: &quot;hide&quot;,
+    &quot;2020/10/26/20201026113024501&quot;: &quot;hide&quot;
 }</pre>
 </div>
 <div bag="default" caption="Query: Backlinks - 'X' but not 'Y'" created="20201022113249402" modified="20201022113249402" revision="0" tags="$:/tags/TextEditor/Snippet rr-UX-mod" title="$:/'X' but not 'Y'" type="text/vnd.tiddlywiki">
@@ -882,7 +886,7 @@ Error message and password prompt
 <div bag="default" created="20201022130701087" modified="20201022131041149" revision="0" title="$:/config/TextEditor/EnableToolbar" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
-<div created="20201102121848651" modified="20201105073011298" title="$:/config/Whitespace/search">
+<div created="20201102121848651" modified="20201107153937165" title="$:/config/Whitespace/search">
 <pre>no</pre>
 </div>
 <div bag="default" created="20201023192301086" modified="20201103102707565" revision="11" title="$:/config/Whitespace/sidebar">
@@ -10768,7 +10772,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[November 4th, 2020 (Wednesday)/20201104090937511]]</pre>
+# [[$:/rr/ViewTemplate/UnlinkedReferences]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -13515,6 +13519,35 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 
 &lt;/$list&gt;</pre>
 </div>
+<div bag="default" created="20201107152643813" modified="20201107152723270" revision="0" tags="$:/tags/ViewTemplate rr-UX-mod" title="$:/rr/ViewTemplate/UnlinkedReferences" type="text/vnd.tiddlywiki">
+<pre>\define PartialMatchPattern()
+$(currentTiddler)$(?i)
+\end
+
+&lt;$reveal type=&quot;nomatch&quot; stateTitle=&lt;&lt;folded-state&gt;&gt; text=&quot;hide&quot; tag=&quot;div&quot; retain=&quot;yes&quot; animate=&quot;yes&quot;&gt;
+
+&lt;hr&gt;
+
+    &lt;$set name=pattern value=&lt;&lt;PartialMatchPattern&gt;&gt; &gt;
+&lt;$count filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]]&quot;/&gt; Unlinked References:&lt;br&gt;
+&lt;$list filter=&quot;[regexp:text&lt;pattern&gt;] -[all[current]backlinks[]] -[all[current]tagging[]] -[is[current]] -[tag[hide]] -[is[system]]&quot;&gt;
+
+&lt;$reveal type=&quot;nomatch&quot; stateTitle=&quot;$:/.giffmex/TiddlyBlinkFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
+&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/.giffmex/TiddlyBlinkFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/right-arrow}}&lt;/$button&gt;
+{{||$:/plugins/sq/streams/breadcrumb-parents-view-template}}&lt;br&gt;
+&lt;small&gt;{{!!text}}&lt;/small&gt;&lt;/h3&gt;
+&lt;/$reveal&gt;
+
+&lt;$reveal type=&quot;match&quot; stateTitle=&quot;$:/.giffmex/TiddlyBlinkFoldData&quot; stateIndex=&lt;&lt;currentTiddler&gt;&gt; text=&quot;show&quot;&gt;
+&lt;h3&gt;&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt; setTitle=&quot;$:/.giffmex/TiddlyBlinkFoldData&quot; setIndex=&lt;&lt;currentTiddler&gt;&gt; setTo=&quot;hide&quot;&gt;{{$:/core/images/down-arrow}}&lt;/$button&gt;
+{{||$:/plugins/sq/streams/breadcrumb-parents-view-template}}&lt;/h3&gt;
+{{!!text}}&lt;br&gt;
+{{||$:/plugins/sq/streams/nodes-list-template}}
+&lt;h5&gt;''Path:''&lt;br&gt;&lt;small&gt; {{||$:/plugins/sq/streams/breadcrumbs-view-template}}&lt;/small&gt;&lt;/h5&gt;
+&lt;/$reveal&gt;
+
+&lt;/$list&gt;</pre>
+</div>
 <div bag="default" created="20201022180207845" modified="20201022180315602" revision="0" title="$:/SiteSubtitle" type="text/vnd.tiddlywiki">
 <pre>A Roam Research Styled TiddlyWiki</pre>
 </div>
@@ -13551,6 +13584,9 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div created="20201103092242635" modified="20201103092335331" title="$:/state/sq/streams/visibility/2020/10/26/20201026122846202--1430236258">
 <pre>show</pre>
 </div>
+<div created="20201107153940517" modified="20201107153940517" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+</div>
 <div created="20201103102706037" modified="20201106164735674" title="$:/state/tab--1963855381">
 <pre>$:/plugins/sq/Stories/settings</pre>
 </div>
@@ -13584,11 +13620,11 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201106164319875" list="[[Download This Wiki as index.html]] [[User Manual]]" modified="20201107143307738" title="$:/StoryList">
+<div created="20201107160014241" list="[[Download This Wiki as index.html]]" modified="20201107160014241" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20201102121848651" modified="20201105073014638" title="$:/temp/advancedsearch">
-<pre>parent</pre>
+<div created="20201102121848651" modified="20201107153955100" title="$:/temp/advancedsearch">
+<pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -13635,11 +13671,11 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
         },
         &quot;$:/info/browser/screen/width&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/width&quot;,
-            &quot;text&quot;: &quot;1366&quot;
+            &quot;text&quot;: &quot;1440&quot;
         },
         &quot;$:/info/browser/screen/height&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/screen/height&quot;,
-            &quot;text&quot;: &quot;768&quot;
+            &quot;text&quot;: &quot;900&quot;
         },
         &quot;$:/info/browser/language&quot;: {
             &quot;title&quot;: &quot;$:/info/browser/language&quot;,
@@ -13648,8 +13684,8 @@ We're playing with &lt;&lt;tag $:/tags/ViewTemplate&gt;&gt;
     }
 }</pre>
 </div>
-<div created="20201026160150984" modified="20201106165554629" title="$:/temp/search">
-<pre>user</pre>
+<div created="20201026160150984" modified="20201107153937166" title="$:/temp/search">
+<pre></pre>
 </div>
 <div bag="default" created="20201022113828835" modified="20201022113828858" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
 <pre>$:/themes/jd/Whitespace</pre>
@@ -15067,8 +15103,11 @@ Copy stream to clipboard as HTML
 <div bag="default" created="20201022113107263" modified="20201022113109490" revision="0" tags="" title="New Tiddler" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div created="20201103093900035" modified="20201103094006783" stream-list="[[November 3rd, 2020/20201103093921253]] [[November 3rd, 2020/20201103093932513]] Welcome/20201023183041204 [[November 3rd, 2020/20201103093956825]] Welcome/20201023183505570 [[November 3rd, 2020/20201103094001832]] Welcome/20201023183134129 [[November 3rd, 2020/20201103094006781]] Welcome/20201023183153382" stream-type="default" tags="Journal" title="November 3rd, 2020">
+<div created="20201103093900035" modified="20201107154214153" stream-list="Welcome/20201023183041204 Welcome/20201023183134129 Welcome/20201023183153382" stream-type="default" tags="Journal" title="November 3rd, 2020">
 <pre></pre>
+</div>
+<div created="20201107154213701" modified="20201107154251445" parent="Welcome/20201023183134129" stream-list="" stream-type="default" title="November 3rd, 2020/20201107154213699">
+<pre>This does not have ''Graph Overview'', it would be complicated to implement, and I personally don't really feel it offers functionality to networked thought. So I haven't worked on it.</pre>
 </div>
 <div created="20201106165527584" modified="20201106165527584" stream-list="" title="November 4th, 2020 (Wednesday)">
 <pre></pre>
@@ -15256,8 +15295,8 @@ Right click on a bullet to access context menu
 <div created="20201023183120442" modified="20201023183131719" parent="Welcome/20201023183041204" revision="0" stream-type="default" title="Welcome/20201023183120441" type="text/vnd.tiddlywiki">
 <pre>//click the links above to learn more//</pre>
 </div>
-<div created="20201023183134130" modified="20201103094001833" parent="November 3rd, 2020" revision="0" stream-type="default" title="Welcome/20201023183134129" type="text/vnd.tiddlywiki">
-<pre>This does not have graph view, it would be complicated to implement, and I personally don't really feel it offers functionality to networked thought. So I haven't worked on it.</pre>
+<div created="20201023183134130" modified="20201107154224838" parent="November 3rd, 2020" revision="0" stream-list="[[November 3rd, 2020/20201107154213699]]" stream-type="default" title="Welcome/20201023183134129" type="text/vnd.tiddlywiki">
+<pre>''Core Roam feature(s) you might expect''</pre>
 </div>
 <div created="20201023183153384" modified="20201103094006784" parent="November 3rd, 2020" revision="0" stream-list="Welcome/20201023183200106 Welcome/20201023183247085 Welcome/20201023183251361 Welcome/20201023183320280 Welcome/20201023183254541" stream-type="default" title="Welcome/20201023183153382" type="text/vnd.tiddlywiki">
 <pre>''Credits:''</pre>
@@ -15278,12 +15317,6 @@ Right click on a bullet to access context menu
 </div>
 <div created="20201023183320281" modified="20201023183327364" parent="Welcome/20201023183153382" revision="0" stream-type="default" title="Welcome/20201023183320280" type="text/vnd.tiddlywiki">
 <pre>JD for his themes</pre>
-</div>
-<div created="20201023183505571" modified="20201103093956827" parent="November 3rd, 2020" revision="0" stream-list="Welcome/20201023183626785" stream-type="default" title="Welcome/20201023183505570" type="text/vnd.tiddlywiki">
-<pre>I have not implemented freelinks––mentions of another page that are not formatted as a link. Again this is a little bit complicated. But part of the intention not to implement right now is to keep this fast and lightweight.</pre>
-</div>
-<div created="20201023183626795" modified="20201023183656556" parent="Welcome/20201023183505570" revision="0" stream-type="default" title="Welcome/20201023183626785" type="text/vnd.tiddlywiki">
-<pre>Some of the same functionality can be found through Search and Replace or TW Commander plugins</pre>
 </div>
 <div created="20201023183829068" modified="20201023183839389" parent="Welcome/20201023183045466" revision="0" stream-type="default" title="Welcome/20201023183829067" type="text/vnd.tiddlywiki">
 <pre>A way to see interlinks between pages</pre>
