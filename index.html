@@ -755,7 +755,7 @@ Error message and password prompt
 <div bag="default" created="20170615140314952" list="" modified="20201105095606258" revision="3" title="$:/_sq/Stories/Story2StoryList" type="text/vnd.tiddlywiki">
 <pre></pre>
 </div>
-<div bag="default" created="20201022114623392" modified="20201107154450746" revision="0" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
+<div bag="default" created="20201022114623392" modified="20201107193750809" revision="0" title="$:/.giffmex/TiddlyBlinkFoldData" type="application/json">
 <pre>{
     &quot;New Tiddler 1&quot;: &quot;hide&quot;,
     &quot;2020/10/22/20201022175317738&quot;: &quot;show&quot;,
@@ -770,7 +770,8 @@ Error message and password prompt
     &quot;Queries/20201026124227549&quot;: &quot;show&quot;,
     &quot;Welcome/20201023185132318&quot;: &quot;show&quot;,
     &quot;2020/10/22/20201022175414939&quot;: &quot;hide&quot;,
-    &quot;2020/10/26/20201026113024501&quot;: &quot;hide&quot;
+    &quot;2020/10/26/20201026113024501&quot;: &quot;hide&quot;,
+    &quot;Queries/20201026124114838&quot;: &quot;hide&quot;
 }</pre>
 </div>
 <div bag="default" caption="Query: Backlinks - 'X' but not 'Y'" created="20201022113249402" modified="20201022113249402" revision="0" tags="$:/tags/TextEditor/Snippet rr-UX-mod" title="$:/'X' but not 'Y'" type="text/vnd.tiddlywiki">
@@ -886,7 +887,7 @@ Error message and password prompt
 <div bag="default" created="20201022130701087" modified="20201022131041149" revision="0" title="$:/config/TextEditor/EnableToolbar" type="text/vnd.tiddlywiki">
 <pre>yes</pre>
 </div>
-<div created="20201102121848651" modified="20201107153937165" title="$:/config/Whitespace/search">
+<div created="20201102121848651" modified="20201107193845993" title="$:/config/Whitespace/search">
 <pre>no</pre>
 </div>
 <div bag="default" created="20201023192301086" modified="20201103102707565" revision="11" title="$:/config/Whitespace/sidebar">
@@ -10772,7 +10773,7 @@ $:/config/ViewToolbarButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/rr/ViewTemplate/UnlinkedReferences]]</pre>
+# [[$:/plugins/sq/streams/breadcrumb-parents-view-template]]</pre>
 </div>
 <div bag="default" revision="0" title="$:/isEncrypted">
 <pre>no</pre>
@@ -13159,7 +13160,7 @@ focus: show</pre>
 &lt;/$set&gt;
 \end</pre>
 </div>
-<div bag="default" created="20201102144320593" modified="20201105075220672" revision="0" tags="rr-UI-mod" title="$:/plugins/sq/streams/breadcrumb-parents-view-template" type="text/vnd.tiddlywiki">
+<div bag="default" created="20201102144320593" modified="20201107193908229" revision="1" tags="rr-UI-mod" title="$:/plugins/sq/streams/breadcrumb-parents-view-template" type="text/vnd.tiddlywiki">
 <pre>\whitespace trim
 \define stream-show-breadcrumbs()
 &lt;$list filter=&quot;[&lt;currentTiddler&gt;has[stream-type]]&quot;&gt;
@@ -13168,7 +13169,7 @@ focus: show</pre>
 			&lt;&lt;stream-show-breadcrumbs&gt;&gt;
 		&lt;/$set&gt;
 	&lt;/$list&gt;	
-	&lt;$list filter=&quot;[&lt;currentTiddler&gt;!has[parent]!match&lt;storyTiddler&gt;]&quot;&gt;
+	&lt;$list filter=&quot;[&lt;currentTiddler&gt;!has[parent]]&quot;&gt;
 		&lt;$wikify name=&quot;display-title&quot; text={{{ [&lt;currentTiddler&gt;get[text]!is[blank]] ~[{!!title}] }}}&gt;
 			&lt;$link to=&lt;&lt;currentTiddler&gt;&gt;/&gt;
 		&lt;/$wikify&gt;
@@ -13584,8 +13585,8 @@ $(currentTiddler)$(?i)
 <div created="20201103092242635" modified="20201103092335331" title="$:/state/sq/streams/visibility/2020/10/26/20201026122846202--1430236258">
 <pre>show</pre>
 </div>
-<div created="20201107153940517" modified="20201107153940517" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Filter</pre>
+<div created="20201107153940517" modified="20201107193849215" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20201103102706037" modified="20201106164735674" title="$:/state/tab--1963855381">
 <pre>$:/plugins/sq/Stories/settings</pre>
@@ -13620,11 +13621,11 @@ $(currentTiddler)$(?i)
 <div bag="default" revision="1" title="$:/status/UserName">
 <pre></pre>
 </div>
-<div created="20201107160014241" list="[[Download This Wiki as index.html]]" modified="20201107160014241" title="$:/StoryList">
+<div created="20201107193743828" list="[[Download This Wiki as index.html]]" modified="20201107193956004" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20201102121848651" modified="20201107153955100" title="$:/temp/advancedsearch">
-<pre></pre>
+<div created="20201102121848651" modified="20201107193845993" title="$:/temp/advancedsearch">
+<pre>parent</pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
 <pre>{
@@ -13684,7 +13685,7 @@ $(currentTiddler)$(?i)
     }
 }</pre>
 </div>
-<div created="20201026160150984" modified="20201107153937166" title="$:/temp/search">
+<div created="20201026160150984" modified="20201107193845994" title="$:/temp/search">
 <pre></pre>
 </div>
 <div bag="default" created="20201022113828835" modified="20201022113828858" revision="0" title="$:/theme" type="text/vnd.tiddlywiki">
